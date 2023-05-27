@@ -35,7 +35,7 @@ class BrowserWindow(QMainWindow):
             }
         """)
 
-        self.forward_button = QPushButton("Forward")
+        self.forward_button = QPushButton("Forward") # Forward button that allows the user to navigate between webpages
         self.forward_button.clicked.connect(self.navigate_forward)
         self.forward_button.setStyleSheet("""
             QPushButton {
@@ -50,7 +50,7 @@ class BrowserWindow(QMainWindow):
             }
         """)
 
-        self.home_button = QPushButton("Home")
+        self.home_button = QPushButton("Home") # Home button that allows the user to go back to the homepage
         self.home_button.clicked.connect(self.load_homepage)
         self.home_button.setStyleSheet("""
             QPushButton {
@@ -65,7 +65,7 @@ class BrowserWindow(QMainWindow):
             }
         """)
 
-        self.refresh_button = QPushButton("Refresh")
+        self.refresh_button = QPushButton("Refresh") # Refreshes the page
         self.refresh_button.clicked.connect(self.refresh_page)
         self.refresh_button.setStyleSheet("""
             QPushButton {
@@ -115,7 +115,7 @@ class BrowserWindow(QMainWindow):
 
         self.load_homepage()  # Load the homepage initially
 
-    def load_url(self):
+    def load_url(self): # Uses google.com/search to open the search results
         text = self.search_bar.text()
         if "http://" in text or "https://" in text:
             url = text
@@ -123,7 +123,7 @@ class BrowserWindow(QMainWindow):
             url = "https://www.google.com/search?q=" + urllib.parse.quote_plus(text)
         self.webview.load(QUrl(url))
 
-    def load_homepage(self):
+    def load_homepage(self): # Homepage, you can change the html howver you like!
         html_content = """
         <html>
         <head>
@@ -192,4 +192,4 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     browser = BrowserWindow()
     browser.show()
-    sys.exit(app.exec_()) # this is required
+    sys.exit(app.exec_()) 
