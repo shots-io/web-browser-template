@@ -1,5 +1,5 @@
-# website-template
-Simple website template, you can customize the HTML elements and CSS styling however you like! This uses the Google Search Engine
+# Browser Template
+Simple web browser template, you can customize the HTML elements and CSS styling however you like! This uses the Google Search Engine
 
 # How to install:
 To run this code, we need two modules "PyQt5" and "PyQtWebEngine" to install this we need to run this in the terminal:
